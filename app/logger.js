@@ -13,18 +13,7 @@ log4js.configure({
             type: 'console',
             layout: {
                 type: "pattern",
-                pattern: "%[[%d] [%p]%] - %m"
-            }
-        },
-        {
-            type: "dateFile",
-            filename: config.log,
-            pattern: "-yyyy-MM-dd",
-            alwaysIncludePattern: true,
-            category: 'main',
-            layout: {
-                type: "pattern",
-                pattern: "[%d] [%p] - %m"
+                pattern: "[%d] %[[%p]%] - %m"
             }
         }
     ],

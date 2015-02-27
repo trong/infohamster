@@ -7,7 +7,6 @@ module.exports = {
     name: 'default',
 
     _config: null,
-    _logger: null,
     _elasticsearch: null,
     _timer: null,
 
@@ -18,9 +17,8 @@ module.exports = {
         this._watch = _.bind(this._watch, this);
     },
 
-    start: function (config, logger, elasticsearch) {
+    start: function (config, elasticsearch) {
         this._config = config;
-        this._logger = logger;
         this._elasticsearch = elasticsearch;
 
         this.init();
@@ -62,9 +60,9 @@ module.exports = {
             }
         }, function (error, response) {
             if (error) {
-                self._logger.error(error);
+                console.error(error);
             } else {
-                self._logger.info('Module ' + self.name + ' status: ' + JSON.stringify(server));
+                //console.info('Module ' + self.name + ' status: ' + JSON.stringify(server));
             }
         });
     },

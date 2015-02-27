@@ -6,6 +6,6 @@ var monitor = require('./app/monitor'),
 logger.info('Service starting ...');
 monitor.start();
 
-process.on('uncaughtException', function(err) {
+process.on('uncaughtException', function (err) {
     console.log(err);
 })

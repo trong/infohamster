@@ -1,8 +1,7 @@
 'use strict';
 
 var elasticsearch = require('elasticsearch'),
-    config = require('./../config'),
-    logger = require('./logger');
+    config = require('./../config');
 
 module.exports = {
     _elasticsearch: null,
@@ -28,7 +27,7 @@ module.exports = {
         this.init();
 
         for (var i = 0; i < this._modules.length; i++) {
-            this._modules[i].start(config, logger, this._elasticsearch);
+            this._modules[i].start(config, this._elasticsearch);
         }
     },
 
@@ -46,7 +45,7 @@ module.exports = {
     _loadModules: function () {
         for (var key in config.modules) {
             if (config.modules[key].enabled != false) {
-                logger.info('Load module: ' + key);
+                console.info('Load module: ' + key);
                 this._modules.push(require('./modules/' + key + '/index'));
             }
         }

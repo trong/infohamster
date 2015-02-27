@@ -16,9 +16,8 @@ module.exports = _.extend(imodule, {
 
             MongoClient.connect(url, _.bind(function (err, db) {
                 if (err) {
-                    self._logger.error(err);
+                    console.error(err);
                 } else {
-                    self._logger.debug(self.name + ' - connected to ' + url);
                     self._servers[this.index] = db;
                 }
             }, {index: i}));
@@ -33,7 +32,7 @@ module.exports = _.extend(imodule, {
                 if (!err) {
                     self._process(doc, self._config.modules[self.name].servers[this.index]);
                 } else {
-                    self._logger.error(err);
+                    console.error(err);
                 }
             }, {index: i}));
         }

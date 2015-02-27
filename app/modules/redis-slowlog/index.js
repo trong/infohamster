@@ -15,7 +15,7 @@ module.exports = _.extend(imodule, {
             this._servers[i] = redis.createClient(servers[i].port, servers[i].host);
 
             this._servers[i].on("error", function (err) {
-                self._logger.error(err);
+                console.error(err);
             });
 
             if (servers[i].db != 0) {
@@ -67,9 +67,9 @@ module.exports = _.extend(imodule, {
                 body: bulk
             }, function (error, response) {
                 if (error) {
-                    self._logger.error(error);
+                    console.error(error);
                 } else {
-                    self._logger.info('Slow log: ' + JSON.stringify(server));
+                    //console.info('Module ' + self.name + ' status: ' + JSON.stringify(server));
                 }
             });
         }

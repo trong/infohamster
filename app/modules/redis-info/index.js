@@ -18,7 +18,7 @@ module.exports = _.extend(imodule, {
             this._servers[i] = redis.createClient(servers[i].port, servers[i].host);
 
             this._servers[i].on("error", function (err) {
-                self._logger.error(err);
+                console.error(err);
             });
 
             if (servers[i].db != 0) {
@@ -46,7 +46,7 @@ module.exports = _.extend(imodule, {
 
                         self._process(item, self._config.modules[self.name].servers[this.index]);
                     } else {
-                        self._logger.error(err);
+                        console.error(err);
                     }
                 }, {index: i}));
         }
