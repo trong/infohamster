@@ -4,6 +4,9 @@ var redis_servers = [
 
 module.exports = {
     modules: {
+        'init-elasticsearch-templates': {
+            enabled: true
+        },
         'redis-info': {
             index: 'redis_stat',
             servers: redis_servers,
