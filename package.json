@@ -1,5 +1,5 @@
 {
-  "name": "db-monitor",
+  "name": "infohamster",
   "version": "0.0.1",
   "dependencies": {
     "elasticsearch": "3.1.3",
