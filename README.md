@@ -22,12 +22,13 @@ Store the data of command "serverStatus" into Elasticsearch.
 3. Install packages
 ```
 npm install
+npm install pm2 -g
 ```
 4. Copy config.dist.js to config.js
 5. Set actual parameters in config.js
 6. Run
 ```
-node index.js
+pm2 start process.json
 ```
 
 ## How to use
