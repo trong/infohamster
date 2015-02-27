@@ -1,0 +1,7 @@
+{
+  "name": "infohamster",
+  "script": "index.js",
+  "max_memory_restart": "200M",
+  "min_uptime": "120s",
+  "exec_mode": "fork_mode"
+}
